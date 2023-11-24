@@ -195,6 +195,28 @@
   /* Class to add blocks through JS to animate and make visible */
   .visible {
       display: block;
-
       pointer-events: all;
+  }
+
+
+  /*Animation for loading the page*/
+  @keyframes slide-in {
+      from {
+          transform: translateY(-5rem);
+      }
+
+      to {
+          transform: translateY(0);
+      }
+  }
+
+  /*Animation for loading the questions*/
+  @keyframes slide-right {
+      from {
+          transform: translateX(-8rem);
+      }
+
+      to {
+          transform: translateX(0);
+      }
   }

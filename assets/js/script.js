@@ -1,3 +1,4 @@
+// The questions copied from https://kupidonia.com/
 const questions = [
     {
         question: "Which of the following is an example of a vector quantity?",
@@ -161,12 +162,10 @@ const questions = [
     }
 ];
 
+// Inside this function, the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-    // Inside this function, the DOM is fully loaded
     const nameInput = document.getElementById('name-input');
-    //let userName;
     nameInput.focus();
-    //userName = nameInput.value; // Set the value of userName
 });
 
 // Global variables to control the click events
@@ -451,8 +450,6 @@ function restartGame() {
     clearInterval(countdown);
     hasAnswered = false;
 }
-
-
 
 /**
  * Timer for the game. The game finishes if the user does not answer during 30 seconds
