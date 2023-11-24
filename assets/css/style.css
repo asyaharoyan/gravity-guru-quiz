@@ -301,6 +301,59 @@
           margin: 30% 10%;
           padding: 1.8rem;
       }
+  }
+
+  /* Media query: Tablets and larger (992px and bigger)*/
+  @media screen and (min-width: 992px) {
+
+      /* Adjust the start page for laptops */
+      #start {
+          margin: 4% 15rem auto 15rem;
+          padding: 5rem;
+      }
+
+      #name-input {
+          width: 70%;
+          margin: .1rem 15%;
+
+      }
+
+      /* Make the buttons smaller */
+      .btn {
+          max-width: 25%;
+      }
+
+      #btn-container {
+          margin: 0 15%;
+      }
+
+      /* Move the info in the middle of the page*/
+      #info-text {
+          margin: 5% auto;
+          padding: 3rem;
+      }
+
+
+
+      /* Adjust the scores and the questions to look nice on the laptops and bigger screens */
+      #score-holder {
+          margin: 2% 25%;
+          font-size: 2rem;
+      }
+
+      #questions {
+          margin: 3% 13%;
+          padding: 3rem;
+      }
+
+      #questions>h2 {
+          margin-bottom: 3rem;
+      }
+
+      #text-container {
+          margin: 5% 13%;
+          padding: 2.5rem;
+      }
 
   }
 
