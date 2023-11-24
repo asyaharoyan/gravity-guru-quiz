@@ -332,14 +332,21 @@ function checkAnswer(event) {
  * Change the right answers' score
  */
 function changeRightAnswersScore() {
-
+    let correctScore = parseInt(document.getElementById('correct').innerText);
+    document.getElementById('correct').innerText = ++correctScore;
 }
 
 /**
  * Change the wrong answers score
  */
 function changeWrongAnswersScore() {
+    let incorrectScore = parseInt(document.getElementById('incorrect').innerText);
+    document.getElementById('incorrect').innerText = ++incorrectScore;
 
+    if (incorrectScore === 5) {
+        gameOver();
+        return;
+    }
 }
 
 /**
