@@ -266,7 +266,41 @@
           margin: 2rem auto;
       }
 
+      /* Push the score holder down and add more margin on the sides */
+      #score-holder {
+          margin: 8% 15%;
+          min-height: 6rem;
+          font-size: 2rem;
+          padding: 1rem 6rem;
+      }
 
+      /* Push the question container down */
+      #questions {
+          margin: 8%;
+          padding: 3rem;
+      }
+
+      #questions>h2 {
+          font-size: 2.5rem;
+      }
+
+      #answer-options {
+          font-size: 1.8rem;
+      }
+
+      /* Make the timer's font (when 5 sec. left) bigger for tablets */
+      .time-counter-red {
+          font-weight: 1000;
+          /* Was 1200, changed */
+          font-size: 3rem;
+      }
+
+      #text-container {
+          text-align: center;
+          font-size: 2.5rem;
+          margin: 30% 10%;
+          padding: 1.8rem;
+      }
 
   }
 
