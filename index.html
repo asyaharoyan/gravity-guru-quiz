@@ -17,10 +17,10 @@
   <body>
     <!-- Game score -->
     <section id="game-score">
+      <!-- Hide the score section by default -->
       <h2 class="hide">Track the score and the timer of the quiz</h2>
-      
-      <div id="score-holder" class="hide">
 
+      <div id="score-holder" class="hide">
         <!--Correct score -->
         <div id="correct-score">
           <span class="score" id="correct-symbol"
@@ -50,6 +50,32 @@
     <!-- Welcome section -->
     <section id="game-start-section">
       <h2 class="hide">The welcome page</h2>
+
+      <div id="start" class="">
+        <h1>Welcome to Gravity Guru Quiz <i class="fa-solid fa-atom"></i></h1>
+        <label for="name-input" class="your-name"
+          ><i class="fa-solid fa-user-astronaut"></i>Enter Your Name</label
+        >
+        <br />
+        <input
+          type="text"
+          placeholder="Enter your Name"
+          id="name-input"
+          name="name-input"
+        />
+        <br />
+        <div id="btn-container">
+          <button id="start-btn" class="btn" type="start">
+            START <i class="fa-solid fa-rocket"></i>
+          </button>
+          <button id="info-btn" class="btn" type="show-info">
+            INFO <i class="fa-regular fa-newspaper"></i>
+          </button>
+          <button id="sound-btn" class="btn" type="sound-on-off">
+            SOUND <i class="fa-solid fa-volume-xmark"></i>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- Game information -->
