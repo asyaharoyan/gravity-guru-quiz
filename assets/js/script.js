@@ -162,6 +162,7 @@ const questions = [
     }
 ];
 
+// Add event listener to load after the DOM
 document.addEventListener('DOMContentLoaded', function () {
     // Inside this function, the DOM is fully loaded
     const nameInput = document.getElementById('name-input');
@@ -188,13 +189,17 @@ const scoreRow = document.getElementById('score-holder');
 const textContainer = document.getElementById('text-container');
 const finishText = document.getElementById('finish-text');
 
+//audio variable to reach from 2 functions
+const welcomeAudioPath = 'assets/sounds/welcome-sound.mp3';
+const welcomeAudio = new Audio(welcomeAudioPath);
+
 // Event listeners to access globally from the function to play sounds
-startBtn.addEventListener('click', startGame);
-infoBtn.addEventListener('click', showInfo);
-nextBtn.addEventListener('click', showNextQuestion);
-restartBtn.addEventListener('click', restartGame);
-okBtn.addEventListener('click', restartBtn);
-soundBtn.addEventListener('click',);
+startBtn.addEventListener('click', playBtnAudio);
+infoBtn.addEventListener('click', playBtnAudio);
+nextBtn.addEventListener('click', playBtnAudio);
+restartBtn.addEventListener('click', playBtnAudio);
+okBtn.addEventListener('click', playBtnAudio);
+soundBtn.addEventListener('click', playPauseAudio);
 
 //Array of answers box, to import answers according the question
 const options = Array.from(document.querySelectorAll('.answer'));
@@ -203,13 +208,16 @@ const options = Array.from(document.querySelectorAll('.answer'));
 let currentQuestionIndex = 0;
 let currentQuestion = {};
 
+//Variables for the timer, can not be declared local
+let countdown;
+const countDown = document.getElementById('timer');
+
 /**
  * Add event listener to all answer-boxes to check the answer and change the background color
  */
 for (let option of options) {
     option.addEventListener('click', checkAnswer);
 }
-
 
 // Functions of the game 
 
@@ -296,7 +304,7 @@ function checkHasAnswered() {
 /**
  * Check if the answer is right or wrong, change the score accordingly
  */
-function checkAnswer() {
+function checkAnswer(event) {
 
 }
 
