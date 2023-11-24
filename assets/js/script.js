@@ -271,7 +271,7 @@ function showNextQuestion() {
         scoreRow.classList.remove('hide');
         // to make space between the numbers
         scoreRow.style.display = ('flex');
-
+        timerOn(30);
         currentQuestion = availableQuestions[currentQuestionIndex];
         // Add current question in the question holder
         questionHolder.innerText = currentQuestion.question;
@@ -285,7 +285,7 @@ function showNextQuestion() {
         currentQuestionIndex++;
     } else {
         // When the user answers all 20 questions, finishes the game
-
+        playWonSound();
         finishedGame.classList.remove('hide');
         questionContainer.classList.remove('next-question');
         textContainer.classList.add('visible');
