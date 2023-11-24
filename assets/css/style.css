@@ -333,7 +333,15 @@
           padding: 3rem;
       }
 
-
+      /* Add hover effects for the buttons */
+      .btn:hover,
+      .btn:active {
+          background-color: rgb(135, 142, 169);
+          color: rgb(20, 35, 90);
+          font-size: 1.5rem;
+          font-weight: 1000;
+          cursor: pointer;
+      }
 
       /* Adjust the scores and the questions to look nice on the laptops and bigger screens */
       #score-holder {
