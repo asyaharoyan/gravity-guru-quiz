@@ -172,11 +172,18 @@ document.addEventListener('DOMContentLoaded', function () {
 const startBtn = document.getElementById('start-btn');
 const infoBtn = document.getElementById('info-btn');
 const soundBtn = document.getElementById('sound-btn');
+const okBtn = document.getElementById('ok-btn');
 
 
 // Global variables to access from more than 1 functions
 const welcomeContainer = document.getElementById('start');
 const infoContainer = document.getElementById('info');
+
+//Event listeners for the buttons
+startBtn.addEventListener('click', startGame);
+infoBtn.addEventListener('click', showInfo);
+okBtn.addEventListener('click', restartGame);
+
 
 
 // Functions of the game 
