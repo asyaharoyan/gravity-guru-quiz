@@ -222,6 +222,41 @@ for (let option of options) {
 // Functions of the game 
 
 /**
+ * Play sound when a btn is clicked
+ */
+function playBtnAudio(event) {
+    const btnAudioPath = 'assets/sounds/button-audio.flac';
+    const btnAudio = new Audio(btnAudioPath);
+    const clickedButton = event.target;
+    if (!welcomeAudio.paused) {
+        btnAudio.play();
+    }
+
+    if (clickedButton === startBtn) {
+        checkUserInput();
+    } else if (clickedButton === infoBtn) {
+        showInfo();
+    } else if (clickedButton === nextBtn) {
+        checkHasAnswered();
+    } else if (clickedButton === restartBtn || clickedButton === okBtn) {
+        restartGame();
+    }
+}
+
+/**
+ * Play or pause audio of the game
+ */
+function playPauseAudio() {
+    if (welcomeAudio.paused) {
+        welcomeAudio.play();
+        soundBtn.innerHTML = `SOUND <i class="fa-solid fa-volume-high"></i>`;
+    } else {
+        welcomeAudio.pause();
+        soundBtn.innerHTML = `SOUND <i class="fa-solid fa-volume-xmark"></i>`;
+    }
+}
+
+/**
  * Checking if the input is empty, does not start the game.
  */
 function checkUserInput() {
@@ -235,6 +270,31 @@ function checkUserInput() {
     }
 }
 
+/**
+ * Play lost sound
+ */
+function playLostSound() {
+    const lostAudioPath = 'assets/sounds/lost-audio.wav';
+    const lostAudio = new Audio(lostAudioPath);
+    if (!welcomeAudio.paused) {
+        lostAudio.play();
+    }
+}
+
+/**
+ * Play won sound
+ */
+function playWonSound() {
+    const wonAudioPath = 'assets/sounds/win-audio.wav';
+    const wonAudio = new Audio(wonAudioPath);
+    if (!welcomeAudio.paused) {
+        wonAudio.play();
+    }
+}
+
+/**
+ * Showing information about the game
+ */
 function showInfo() {
     infoContainer.classList.add('visible');
 }
@@ -408,7 +468,7 @@ function timerOn(seconds) {
             clearInterval(countdown);
             gameOver();
             //exit the function to not keep bringing the restart button 
-            return; 
+            return;
         } else if (seconds === 4) {
             //Change the color of the timer to warn the user that the time is finishing
             countDown.classList.add('time-counter-red');
