@@ -325,7 +325,7 @@ function checkAnswer(event) {
         changeWrongAnswersScore();
     }
     hasAnswered = true;
-
+    clearInterval(countdown);
 }
 
 /**
@@ -369,7 +369,29 @@ function gameOver() {
  * Restart the game if the user wants to play again
  */
 function restartGame() {
+    // Reset all the color changes and hide/show containers accordingly to restart the game
+    infoContainer.classList.remove('visible');
+    questionContainer.classList.add('hide');
+    scoreRow.classList.add('hide');
+    scoreRow.style.display = ('none');
+    finishedGame.classList.add('hide');
+    welcomeContainer.classList.remove('hide');
+    document.getElementById('name-input').focus();
+    //Make sure that the first question will always be the same
+    currentQuestionIndex = 0;
 
+    // Reset all the scores if the user starts over
+    document.getElementById('incorrect').innerText = '0';
+    document.getElementById('correct').innerText = '0';
+    // Add new options with every question
+    options.forEach(option => {
+        const number = option.dataset['number'];
+        option.innerText = currentQuestion['option' + number];
+        //Reset the background color from green/red to the initial color
+        option.style.backgroundColor = 'initial';
+    });
+    clearInterval(countdown);
+    hasAnswered = false;
 }
 
 
@@ -386,7 +408,7 @@ function timerOn(seconds) {
             clearInterval(countdown);
             gameOver();
             //exit the function to not keep bringing the restart button 
-            return;
+            return; 
         } else if (seconds === 4) {
             //Change the color of the timer to warn the user that the time is finishing
             countDown.classList.add('time-counter-red');
