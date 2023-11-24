@@ -1,3 +1,4 @@
+// The questions had been copied from https://kupidonia.com/
 const questions = [
     {
         question: "Which of the following is an example of a vector quantity?",
@@ -161,12 +162,11 @@ const questions = [
     }
 ];
 
-document.addEventListener('DOMContentLoaded', function () {
     // Inside this function, the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+
     const nameInput = document.getElementById('name-input');
-    //let userName;
     nameInput.focus();
-    //userName = nameInput.value; // Set the value of userName
 });
 
 // Global variables to control the click events
@@ -255,20 +255,6 @@ function playPauseAudio() {
 }
 
 /**
- * Checking if the input is empty, does not start the game.
- */
-function checkUserInput() {
-    const nameInput = document.getElementById('name-input');
-    if (nameInput) {
-        if (nameInput.value.trim() === '') {
-            alert('Please enter your name');
-        } else {
-            startGame();
-        }
-    }
-}
-
-/**
  * Play lost sound
  */
 function playLostSound() {
@@ -287,6 +273,20 @@ function playWonSound() {
     const wonAudio = new Audio(wonAudioPath);
     if (!welcomeAudio.paused) {
         wonAudio.play();
+    }
+}
+
+/**
+ * Checking if the input is empty, does not start the game.
+ */
+function checkUserInput() {
+    const nameInput = document.getElementById('name-input');
+    if (nameInput) {
+        if (nameInput.value.trim() === '') {
+            alert('Please enter your name');
+        } else {
+            startGame();
+        }
     }
 }
 
@@ -451,8 +451,6 @@ function restartGame() {
     clearInterval(countdown);
     hasAnswered = false;
 }
-
-
 
 /**
  * Timer for the game. The game finishes if the user does not answer during 30 seconds
