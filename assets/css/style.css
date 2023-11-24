@@ -81,3 +81,120 @@
   .btn i {
       margin-left: .5rem;
   }
+
+  #score-holder {
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+  }
+
+  /* Style the incorrect score, correct score, the timer and the symbols */
+  #incorrect,
+  #incorrect-symbol {
+      color: rgb(237, 52, 52);
+      font-weight: 800;
+  }
+
+  #correct,
+  #correct-symbol {
+      margin: 0 .1rem;
+      color: rgb(213, 243, 233);
+      font-weight: 800;
+  }
+
+  .time-counter {
+      color: rgb(20, 35, 90);
+      font-weight: 800;
+  }
+
+  .time-counter-red {
+      color: rgb(237, 52, 52);
+      font-weight: 900;
+      font-size: 1.5rem;
+  }
+
+  /* Styling the questions holder, the question font and the answer */
+  #question-holder {
+      font-size: 1.2rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      text-align: center;
+  }
+
+  #questions {
+      background-color: rgba(218, 228, 232, 0.6);
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 2rem;
+  }
+
+  .answer {
+      width: 100%;
+      margin: .5rem auto;
+      padding: 1rem;
+      min-height: 4rem;
+      border: 1px solid rgb(223, 230, 235);
+      background-color: rgba(28, 77, 112, 0.2);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+  }
+
+  /* Background to cover the questions when the user loses the game */
+  #finished-game {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      margin: 0;
+      z-index: 100;
+      background-color: rgba(0, 0, 0, .75);
+  }
+
+  /* Background to cover the start page when the user reads the instructions */
+  #info {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      z-index: 100;
+      background-color: rgba(0, 0, 0, .75);
+      /*enable the scrolling*/
+      overflow-y: auto;
+  }
+
+  /* Style the text and the container in info */
+  #info-text {
+      max-width: 80rem;
+      margin: 5rem 1.5rem;
+      padding: 1rem;
+      border-radius: 2rem;
+      background-color: rgba(218, 228, 232, 0.9);
+  }
+
+  #info-text>h2 {
+      text-align: center;
+  }
+
+  #info-text em {
+      font-weight: 800;
+  }
+
+  /* Style the game over text */
+  #text-container {
+      margin: 6rem 1.5rem;
+      padding: 1rem;
+      border-radius: 2rem;
+      background-color: rgba(218, 228, 232, 0.9);
+  }
+
+  /* Class to add blocks through JS to animate and make visible */
+  .visible {
+      display: block;
+
+      pointer-events: all;
+  }

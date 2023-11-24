@@ -1,4 +1,4 @@
-//The questions and answers had been taken from kupidonia.com
+
 const questions = [
     {
         question: "Which of the following is an example of a vector quantity?",
@@ -162,27 +162,39 @@ const questions = [
     }
 ];
 
-// Inside this function, the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
+    // Inside this function, the DOM is fully loaded
     const nameInput = document.getElementById('name-input');
+    //let userName;
     nameInput.focus();
+    //userName = nameInput.value; // Set the value of userName
 });
 
 // Global variables to control the click events
+const nextBtn = document.getElementById('next-btn');
 const startBtn = document.getElementById('start-btn');
+const restartBtn = document.getElementById('restrart-btn');
 const infoBtn = document.getElementById('info-btn');
 const soundBtn = document.getElementById('sound-btn');
 const okBtn = document.getElementById('ok-btn');
 
-
 // Global variables to access from more than 1 functions
 const welcomeContainer = document.getElementById('start');
 const infoContainer = document.getElementById('info');
+const timerSymbol = document.getElementById('timer-symbol');
+const finishedGame = document.getElementById('finished-game');
+const questionContainer = document.getElementById('questions');
+const scoreRow = document.getElementById('score-holder');
+const textContainer = document.getElementById('text-container');
+const finishText = document.getElementById('finish-text');
 
-//Event listeners for the buttons
+// Event listeners to access globally from the function to play sounds
 startBtn.addEventListener('click', startGame);
 infoBtn.addEventListener('click', showInfo);
-okBtn.addEventListener('click', restartGame);
+nextBtn.addEventListener('click', showNextQuestion);
+restartBtn.addEventListener('click', restartGame);
+okBtn.addEventListener('click', restartBtn);
+soundBtn.addEventListener('click',);
 
 //Array of answers box, to import answers according the question
 const options = Array.from(document.querySelectorAll('.answer'));
@@ -315,7 +327,6 @@ function gameOver() {
 function restartGame() {
 
 }
-
 
 
 /**
