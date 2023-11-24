@@ -310,6 +310,21 @@ function checkHasAnswered() {
  * Check if the answer is right or wrong, change the score accordingly
  */
 function checkAnswer(event) {
+    questionContainer.classList.remove('next-question');
+    // Checking if the question has answered or if the current question is undefined(to avoid errors)
+    if (hasAnswered || !currentQuestion || hasAnswered === true) {
+        return; // Exit the function if the user has already answered
+    }
+    //Added event to chen the answer on click event and change the background color
+    const clickedAnswer = parseInt(event.target.dataset.number, 10);
+    if (clickedAnswer === currentQuestion.answer) {
+        event.target.style.backgroundColor = 'rgba(38, 212, 154, .7)';
+        changeRightAnswersScore();
+    } else {
+        event.target.style.backgroundColor = 'rgba(237, 52, 52, .7)';
+        changeWrongAnswersScore();
+    }
+    hasAnswered = true;
 
 }
 
