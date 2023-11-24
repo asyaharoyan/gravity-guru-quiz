@@ -376,6 +376,22 @@ function restartGame() {
 /**
  * Timer for the game. The game finishes if the user does not answer during 30 seconds
  */
-function timerOn() {
-}
+function timerOn(seconds) {
+    countdown = setInterval(() => {
+        countDown.innerHTML = `${seconds}`;
+        seconds--;
 
+        if (seconds < 0) {
+            //Start counting from 30 every time the game finishes
+            clearInterval(countdown);
+            gameOver();
+            //exit the function to not keep bringing the restart button 
+            return;
+        } else if (seconds === 4) {
+            //Change the color of the timer to warn the user that the time is finishing
+            countDown.classList.add('time-counter-red');
+            timerSymbol.classList.add('time-counter-red');
+        }
+    }, 1000);
+    return countdown;
+}
