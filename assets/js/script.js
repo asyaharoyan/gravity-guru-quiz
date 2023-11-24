@@ -184,29 +184,94 @@ startBtn.addEventListener('click', startGame);
 infoBtn.addEventListener('click', showInfo);
 okBtn.addEventListener('click', restartGame);
 
+//Array of answers box, to import answers according the question
+const options = Array.from(document.querySelectorAll('.answer'));
+
+//to always start from the first question
+let currentQuestionIndex = 0;
+let currentQuestion = {};
+
+/**
+ * Add event listener to all answer-boxes to check the answer and change the background color
+ */
+for (let option of options) {
+    option.addEventListener('click', checkAnswer);
+}
 
 
 // Functions of the game 
 
 /**
- * Showing information about the game
+ * Checking if the input is empty, does not start the game.
  */
-function showInfo() {
+function checkUserInput() {
+    const nameInput = document.getElementById('name-input');
+    if (nameInput) {
+        if (nameInput.value.trim() === '') {
+            alert('Please enter your name');
+        } else {
+            startGame();
+        }
+    }
+}
 
+function showInfo() {
+    infoContainer.classList.add('visible');
 }
 
 /**
  * Starting the game
  */
 function startGame() {
+    options.forEach(option => {
+        const number = option.dataset['number'];
+        option.innerText = currentQuestion['option' + number];
+        option.style.backgroundColor = 'initial';   //reset the background color from green/red to the initial color         
+    });
 
+    hasAnswered = false;
+    welcomeContainer.classList.add('hide');
+    document.getElementById('name-input').value = '';
+    showNextQuestion();
 }
 
 /**
  * To continue with the next questions as the user clicks next
  */
 function showNextQuestion() {
+    //to be able to change the array separatly
+    let availableQuestions = [...questions];
+    const questionHolder = document.getElementById('question-holder');
+    // Animate the question every time it loads
+    questionContainer.classList.add('next-question');
+    hasAnswered = false;
 
+    if (currentQuestionIndex < availableQuestions.length) {
+        questionContainer.classList.remove('hide');
+        scoreRow.classList.remove('hide');
+        // to make space between the numbers
+        scoreRow.style.display = ('flex');
+
+        currentQuestion = availableQuestions[currentQuestionIndex];
+        // Add current question in the question holder
+        questionHolder.innerText = currentQuestion.question;
+        // Changes the answer options according the question
+        options.forEach(option => {
+            const number = option.dataset['number'];
+            option.innerText = currentQuestion['option' + number];
+            // Reset the background color from green/red to the initial color
+            option.style.backgroundColor = 'initial';
+        });
+        currentQuestionIndex++;
+    } else {
+        // When the user answers all 20 questions, finishes the game
+
+        finishedGame.classList.remove('hide');
+        questionContainer.classList.remove('next-question');
+        textContainer.classList.add('visible');
+        finishText.innerHTML = `Well done! You successfully finished the quiz! <i class="fa-regular fa-face-laugh-wink"></i>`;
+        return;
+    }
 }
 
 /**
