@@ -298,7 +298,12 @@ function showNextQuestion() {
  * Check if the user did not answer a question, throw an alert
  */
 function checkHasAnswered() {
-
+    let hasAnswered;
+    if (hasAnswered === false) {
+        alert('Please answer the question!');
+    } else {
+        showNextQuestion();
+    }
 }
 
 /**
