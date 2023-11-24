@@ -1,3 +1,4 @@
+//The questions and answers had been taken from kupidonia.com
 const questions = [
     {
         question: "Which of the following is an example of a vector quantity?",
@@ -160,3 +161,9 @@ const questions = [
         answer: 1
     }
 ];
+
+// Inside this function, the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+    const nameInput = document.getElementById('name-input');
+    nameInput.focus();
+});
