@@ -21,14 +21,14 @@
       display: none;
   }
 
-  /* Added general style for starting the game and the score */
+  /* Added general style and animation for starting the game and the score */
   #start,
   #score-holder {
       background-color: rgba(218, 228, 232, 0.6);
       margin: 1rem;
       padding: 1rem;
       border-radius: 2rem;
-
+      animation: slide-in .5s ease-out forwards;
   }
 
   /* Welcome text */
@@ -195,7 +195,14 @@
   /* Class to add blocks through JS to animate and make visible */
   .visible {
       display: block;
+      animation: slide-in 0.3s ease-out forwards;
       pointer-events: all;
+  }
+
+  /* Animate all the NEXT QUESTIONS */
+  .next-question {
+      animation: slide-right 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      /* pointer-events: all; --- what is this*/
   }
 
 
