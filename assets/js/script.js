@@ -353,7 +353,16 @@ function changeWrongAnswersScore() {
  * Throws the user to the last page when the time is up.
  */
 function gameOver() {
-
+    playLostSound();
+    // Reset all the color changes and hide/show containers accordingly
+    countDown.classList.remove('time-counter-red');
+    timerSymbol.classList.remove('time-counter-red');
+    textContainer.classList.add('visible');
+    finishedGame.classList.remove('hide');
+    finishText.innerHTML = `Sorry, the game is over <i class="fa-regular fa-face-frown"></i>! Try again!`;
+    hasAnswered = true;
+    //Exit the function
+    return;
 }
 
 /**
