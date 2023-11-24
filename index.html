@@ -1,173 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- For search engins -->
-    <meta name="description" content="Quiz to boost the knowledge in physics" />
-    <meta name="keywords" content="physics, quiz, gravity, for students" />
-    <meta name="author" content="Asya Haroyan" />
+
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicon/favicon-16x16.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
     <title>Gravity Guru Quiz</title>
+</head>
 
-    <!--Stylesheet-->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-
-  <body>
+<body>
     <!-- Game score -->
     <section id="game-score">
-      <!-- Hide the score section by default -->
-      <h2 class="hide">Track the score and the timer of the quiz</h2>
+        <h2 class="hide">Track the score and the timer of the quiz</h2>
+        <div id="score-holder" class="hide">
+            <!--Correct score -->
+            <div id="correct-score">
+                <span class="score" id="correct-symbol"><i class="fa-solid fa-check-double"></i></span>
+                <span id="correct" class="score">0</span>
+            </div>
 
-      <div id="score-holder" class="hide">
-        <!--Correct score -->
-        <div id="correct-score">
-          <span class="score" id="correct-symbol"
-            ><i class="fa-solid fa-check-double"></i
-          ></span>
-          <span id="correct" class="score">0</span>
-        </div>
+            <!--Incorrect score -->
+            <div id="incorrect-score">
+                <span class="score" id="incorrect-symbol"><i class="fa-solid fa-xmark"></i></span>
+                <span id="incorrect" class="score">0</span>
+            </div>
 
-        <!--Incorrect score -->
-        <div id="incorrect-score">
-          <span class="score" id="incorrect-symbol"
-            ><i class="fa-solid fa-xmark"></i
-          ></span>
-          <span id="incorrect" class="score">0</span>
+            <!--Timer -->
+            <div id="timer-score">
+                <span class="score time-counter" id="timer-symbol"><i class="fa-solid fa-clock"></i></span>
+                <span id="timer" class="score time-counter">30</span>
+            </div>
         </div>
-
-        <!--Timer -->
-        <div id="timer-score">
-          <span class="score time-counter" id="timer-symbol"
-            ><i class="fa-solid fa-clock"></i
-          ></span>
-          <span id="timer" class="score time-counter">30</span>
-        </div>
-      </div>
     </section>
 
     <!-- Welcome section -->
     <section id="game-start-section">
-      <h2 class="hide">The welcome page</h2>
-
-      <div id="start" class="">
-        <h1>Welcome to Gravity Guru Quiz <i class="fa-solid fa-atom"></i></h1>
-        <label for="name-input" class="your-name"
-          ><i class="fa-solid fa-user-astronaut"></i>Enter Your Name</label
-        >
-        <br />
-        <input
-          type="text"
-          placeholder="Enter your Name"
-          id="name-input"
-          name="name-input"
-        />
-        <br />
-        <div id="btn-container">
-          <button id="start-btn" class="btn" type="start">
-            START <i class="fa-solid fa-rocket"></i>
-          </button>
-          <button id="info-btn" class="btn" type="show-info">
-            INFO <i class="fa-regular fa-newspaper"></i>
-          </button>
-          <button id="sound-btn" class="btn" type="sound-on-off">
-            SOUND <i class="fa-solid fa-volume-xmark"></i>
-          </button>
+        <div id="start" class="">
+            <h1>Welcome to Gravity Guru Quiz <i class="fa-solid fa-atom"></i></h1>
+            <label for="name-input" class="your-name"><i class="fa-solid fa-user-astronaut"></i>Enter Your Name</label>
+            <br />
+            <input type="text" placeholder="Enter your Name" id="name-input" name="name-input" />
+            <br />
+            <div id="btn-container">
+                <button id="start-btn" class="btn" type="start">START <i class="fa-solid fa-rocket"></i></button>
+                <button id="info-btn" class="btn" type="show-info">INFO <i class="fa-regular fa-newspaper"></i></button>
+                <button id="sound-btn" class="btn" type="sound-on-off">SOUND <i class="fa-solid fa-volume-xmark"></i></button>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Game information -->
     <section id="game-information">
-      <h2 class="hide">The rules of the game.</h2>
-
-      <div id="info" class="hide">
-        <div id="info-text">
-          <h2>About Gravity Guru Quiz <i class="fa-solid fa-atom"></i></h2>
-          <br />
-          <p>
-            Welcome to the Physics Adventure Quiz for School Superstars!
-            <i class="fa-solid fa-rocket"></i>
-            <br /><br />
-            Embark on a journey of knowledge with <em>20</em> exciting physics
-            questions designed just for you. To kickstart the fun, share your
-            name! <br /><br />
-            You've got a cool <em>30</em> seconds for each question, and guess
-            what? The timer resets with every new one. How awesome is that?
-            <br /><br />
-            But hey, stay sharp! <em>You're allowed up to 5 mistakes.</em> If
-            you reach the limit, no worries—just hit restart and give it another
-            go. <br /><br />
-            Let the fun learning begin! <i class="fa-solid fa-meteor"></i>
-            <br /><br />
-            Good luck!
-          </p>
-          <button id="ok-btn" class="btn" type="quit-info">
-            OK <i class="fa-regular fa-thumbs-up"></i>
-          </button>
+        <div id="info" class="hide">
+            <div id="info-text">
+                <h2>About Gravity Guru Quiz <i class="fa-solid fa-atom"></i></h2>
+                <br />
+                <p>
+                    Welcome to the Physics Adventure Quiz for School Superstars!
+                    <i class="fa-solid fa-rocket"></i>
+                    <br /><br />
+                    Embark on a journey of knowledge with <em>20</em> exciting physics
+                    questions designed just for you. To kickstart the fun, share your
+                    name! <br /><br />
+                    You've got a cool <em>30</em> seconds for each question, and guess
+                    what? The timer resets with every new one. How awesome is that?
+                    <br /><br />
+                    But hey, stay sharp! <em>You're allowed up to 5 mistakes.</em> If you
+                    reach the limit, no worries—just hit restart and give it another go.
+                    <br /><br />
+                    Let the fun learning begin! <i class="fa-solid fa-meteor"></i>
+                    <br /><br />
+                    Good luck!
+                </p>
+                <button id="ok-btn" class="btn" type="quit-info">OK <i class="fa-regular fa-thumbs-up"></i>
+                </button>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Questions and options -->
     <section id="questions-answers">
-      <h2 class="hide">The question and the answer options section.</h2>
+        <div id="questions" class="hide">
+            <h2 id="question-holder">Quesion</h2>
+            <div id="answer-options">
+                <div id="answer1-btn" class="answer" data-number="1">Answer 1</div>
+                <div id="answer2-btn" class="answer" data-number="2">Answer 2</div>
+                <div id="answer3-btn" class="answer" data-number="3">Answer 3</div>
+                <div id="answer4-btn" class="answer" data-number="4">Answer 4</div>
+            </div>
 
-      <div id="questions" class="hide">
-        <h2 id="question-holder">Quesion</h2>
-        <div id="answer-options">
-          <div id="answer1-btn" class="answer" data-number="1">Answer 1</div>
-          <div id="answer2-btn" class="answer" data-number="2">Answer 2</div>
-          <div id="answer3-btn" class="answer" data-number="3">Answer 3</div>
-          <div id="answer4-btn" class="answer" data-number="4">Answer 4</div>
+            <button id="next-btn" class="btn" type="next">NEXT <i class="fa-solid fa-angles-right"></i></button>
         </div>
-
-        <button id="next-btn" class="btn" type="next">
-          NEXT <i class="fa-solid fa-angles-right"></i>
-        </button>
-      </div>
     </section>
 
     <!-- Finish -->
-    <section id="finish-section">
-      <h2 class="hide">The finish of the game.</h2>
-
-      <div id="finished-game" class="hide">
+    <div id="finished-game" class="hide">
         <div id="text-container" class="">
-          <div id="finish-text" class=""></div>
-          <button id="restrart-btn" class="btn" type="restart">
-            RESTART <i class="fa-solid fa-rotate-left"></i>
-          </button>
+            <div id="finish-text" class=""></div>
+            <button id="restrart-btn" class="btn" type="restart">RESTART <i
+                    class="fa-solid fa-rotate-left"></i></button>
         </div>
-      </div>
-    </section>
+    </div>
 
     <!-- Script -->
-    <script
-      src="https://kit.fontawesome.com/74774a4a16.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/74774a4a16.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
-  </body>
+</body>
+
 </html>

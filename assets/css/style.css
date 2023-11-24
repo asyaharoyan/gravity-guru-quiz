@@ -1,4 +1,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@700;800&family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  /* font-family: 'Martian Mono', monospace;
+  font-family: 'Noto Serif', serif;
+  font-family: 'Poppins', sans-serif;*/
 
   /* Boiler plate */
   * {
@@ -202,6 +205,7 @@
   /* Animate all the NEXT QUESTIONS */
   .next-question {
       animation: slide-right 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      /* pointer-events: all; --- what is this*/
   }
 
   /* Media query: Tablets and larger (768px and bigger)*/
@@ -301,6 +305,7 @@
           margin: 30% 10%;
           padding: 1.8rem;
       }
+
   }
 
   /* Media query: Tablets and larger (992px and bigger)*/
@@ -364,7 +369,6 @@
       }
 
   }
-
 
   /*Animation for loading the page*/
   @keyframes slide-in {
