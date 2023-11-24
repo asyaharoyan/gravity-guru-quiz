@@ -1,4 +1,3 @@
-
 const questions = [
     {
         question: "Which of the following is an example of a vector quantity?",
@@ -162,7 +161,6 @@ const questions = [
     }
 ];
 
-// Add event listener to load after the DOM
 document.addEventListener('DOMContentLoaded', function () {
     // Inside this function, the DOM is fully loaded
     const nameInput = document.getElementById('name-input');
@@ -219,7 +217,7 @@ for (let option of options) {
     option.addEventListener('click', checkAnswer);
 }
 
-// Functions of the game 
+// Game functions
 
 /**
  * Play sound when a btn is clicked
@@ -453,6 +451,7 @@ function restartGame() {
     clearInterval(countdown);
     hasAnswered = false;
 }
+
 
 
 /**
