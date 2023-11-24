@@ -167,3 +167,88 @@ document.addEventListener('DOMContentLoaded', function () {
     const nameInput = document.getElementById('name-input');
     nameInput.focus();
 });
+
+// Global variables to control the click events
+const startBtn = document.getElementById('start-btn');
+const infoBtn = document.getElementById('info-btn');
+const soundBtn = document.getElementById('sound-btn');
+
+
+// Global variables to access from more than 1 functions
+const welcomeContainer = document.getElementById('start');
+const infoContainer = document.getElementById('info');
+
+
+// Functions of the game 
+
+/**
+ * Showing information about the game
+ */
+function showInfo() {
+
+}
+
+/**
+ * Starting the game
+ */
+function startGame() {
+
+}
+
+/**
+ * To continue with the next questions as the user clicks next
+ */
+function showNextQuestion() {
+
+}
+
+/**
+ * Check if the user did not answer a question, throw an alert
+ */
+function checkHasAnswered() {
+
+}
+
+/**
+ * Check if the answer is right or wrong, change the score accordingly
+ */
+function checkAnswer() {
+
+}
+
+/**
+ * Change the right answers' score
+ */
+function changeRightAnswersScore() {
+
+}
+
+/**
+ * Change the wrong answers score
+ */
+function changeWrongAnswersScore() {
+
+}
+
+/**
+ * Throws the user to the last page when the time is up.
+ */
+function gameOver() {
+
+}
+
+/**
+ * Restart the game if the user wants to play again
+ */
+function restartGame() {
+
+}
+
+
+
+/**
+ * Timer for the game. The game finishes if the user does not answer during 30 seconds
+ */
+function timerOn() {
+}
+
