@@ -20,3 +20,64 @@
   .hide {
       display: none;
   }
+
+  /* Added general style for starting the game and the score */
+  #start,
+  #score-holder {
+      background-color: rgba(218, 228, 232, 0.6);
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 2rem;
+
+  }
+
+  /* Welcome text */
+  #start>h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin: 3rem .5rem 4rem .5rem;
+      color: rgb(255, 255, 255);
+  }
+
+  /* Style the label of the name input */
+  .your-name {
+      font-size: 1.1rem;
+      color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+  }
+
+  /* Add margin to the icon to look nicer */
+  .your-name>i {
+      margin-right: .6rem;
+      margin-top: 0.3rem;
+  }
+
+  /* Style the input */
+  #name-input {
+      height: 2.5rem;
+      width: 100%;
+      margin: .1rem 0;
+      padding: .3rem;
+      border: 1px solid rgb(223, 230, 235);
+      border-radius: .6rem;
+      background-color: rgba(223, 230, 235, .6);
+  }
+
+  /* Style all the buttons to look similar */
+  .btn {
+      height: 2rem;
+      width: 50%;
+      font-weight: 300;
+      background-color: rgb(20, 35, 90);
+      border: 1px solid rgb(223, 230, 235);
+      color: rgb(223, 230, 235);
+      border-radius: .5rem;
+      display: block;
+      margin: .8rem auto 1rem auto;
+  }
+
+  /* Make som space between the icon and the text */
+  .btn i {
+      margin-left: .5rem;
+  }
