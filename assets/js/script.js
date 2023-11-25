@@ -223,7 +223,7 @@ for (let option of options) {
  * Play sound when a btn is clicked
  */
 function playBtnAudio(event) {
-    const btnAudioPath = 'assets/sounds/button-audio.flac';
+    const btnAudioPath = 'assets/sounds/button-audio.mp3';
     const btnAudio = new Audio(btnAudioPath);
     const clickedButton = event.target;
     if (!welcomeAudio.paused) {
@@ -258,7 +258,7 @@ function playPauseAudio() {
  * Play lost sound
  */
 function playLostSound() {
-    const lostAudioPath = 'assets/sounds/lost-audio.wav';
+    const lostAudioPath = 'assets/sounds/lost-audio.mp3';
     const lostAudio = new Audio(lostAudioPath);
     if (!welcomeAudio.paused) {
         lostAudio.play();
@@ -269,7 +269,7 @@ function playLostSound() {
  * Play won sound
  */
 function playWonSound() {
-    const wonAudioPath = 'assets/sounds/win-audio.wav';
+    const wonAudioPath = 'assets/sounds/win-audio.mp3';
     const wonAudio = new Audio(wonAudioPath);
     if (!welcomeAudio.paused) {
         wonAudio.play();
@@ -347,7 +347,9 @@ function showNextQuestion() {
         finishedGame.classList.remove('hide');
         questionContainer.classList.remove('next-question');
         textContainer.classList.add('visible');
-        finishText.innerHTML = `Well done! You successfully finished the quiz! <i class="fa-regular fa-face-laugh-wink"></i>`;
+        finishText.innerHTML = `
+        Well done! You successfully finished the quiz! <i class="fa-regular fa-face-laugh-wink"></i>
+        `;
         return;
     }
 }
