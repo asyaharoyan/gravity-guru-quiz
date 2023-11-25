@@ -164,7 +164,6 @@ const questions = [
 
     // Inside this function, the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-
     const nameInput = document.getElementById('name-input');
     nameInput.focus();
 });
@@ -342,7 +341,7 @@ function showNextQuestion() {
         });
         currentQuestionIndex++;
     } else {
-        // When the user answers all 20 questions, finishes the game
+        // When the user answers all 20 questions, the game finishes
         playWonSound();
         finishedGame.classList.remove('hide');
         questionContainer.classList.remove('next-question');
