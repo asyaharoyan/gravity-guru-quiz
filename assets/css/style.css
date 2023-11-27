@@ -93,13 +93,15 @@
 
   /* Style the incorrect score, correct score, the timer and the symbols */
   #incorrect,
-  #incorrect-symbol {
+  #incorrect-symbol,
+  #max-incorrect {
       color: rgb(237, 52, 52);
       font-weight: 800;
   }
 
   #correct,
-  #correct-symbol {
+  #correct-symbol,
+  #max-correct {
       margin: 0 .1rem;
       color: rgb(213, 243, 233);
       font-weight: 800;
