@@ -164,7 +164,6 @@ const questions = [
 
 // Inside this function, the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-
     const nameInput = document.getElementById('name-input');
     nameInput.focus();
 
@@ -298,7 +297,7 @@ function playWonSound() {
     if (!welcomeAudio.paused) {
         wonAudio.play();
     } else {
-        lostAudio.pause();
+        wonAudio.pause();
     }
 }
 
