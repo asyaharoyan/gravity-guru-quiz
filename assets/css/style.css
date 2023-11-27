@@ -12,6 +12,7 @@
 
   /* General design to apply to the quiz*/
   body {
+      /*The image had been taken https: //pixabay.com/photos/cosmos-milky-way-night-sky-stars-1853491/*/
       background: url(../images/background.webp) left 30% bottom 50%/180%;
       background-repeat: repeat;
       background-color: rgb(43, 71, 84);

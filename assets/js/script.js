@@ -162,19 +162,50 @@ const questions = [
     }
 ];
 
-    // Inside this function, the DOM is fully loaded
+// Inside this function, the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
+
     const nameInput = document.getElementById('name-input');
     nameInput.focus();
+
+    // Variables for buttons to add event listeners
+    const nextBtn = document.getElementById('next-btn');
+    const startBtn = document.getElementById('start-btn');
+    const restartBtn = document.getElementById('restrart-btn');
+    const infoBtn = document.getElementById('info-btn');
+    const soundBtn = document.getElementById('sound-btn');
+    const okBtn = document.getElementById('ok-btn');
+
+    // Event listeners to access globally from the function to play sounds
+    startBtn.addEventListener('click', checkClickedButton);
+    infoBtn.addEventListener('click', checkClickedButton);
+    nextBtn.addEventListener('click', checkClickedButton);
+    restartBtn.addEventListener('click', checkClickedButton);
+    okBtn.addEventListener('click', checkClickedButton);
+    soundBtn.addEventListener('click', playPauseAudio);
+
+    /**
+     * Check which button had been clicked
+     */
+    function checkClickedButton(event) {
+        const clickedButton = event.target;
+
+        if (clickedButton === startBtn) {
+            playBtnAudio();
+            checkUserInput();
+        } else if (clickedButton === infoBtn) {
+            playBtnAudio();
+            showInfo();
+        } else if (clickedButton === nextBtn) {
+            playBtnAudio();
+            checkHasAnswered();
+        } else if (clickedButton === restartBtn || clickedButton === okBtn) {
+            playBtnAudio();
+            restartGame();
+        }
+    }
 });
 
-// Global variables to control the click events
-const nextBtn = document.getElementById('next-btn');
-const startBtn = document.getElementById('start-btn');
-const restartBtn = document.getElementById('restrart-btn');
-const infoBtn = document.getElementById('info-btn');
-const soundBtn = document.getElementById('sound-btn');
-const okBtn = document.getElementById('ok-btn');
 
 // Global variables to access from more than 1 functions
 const welcomeContainer = document.getElementById('start');
@@ -186,17 +217,9 @@ const scoreRow = document.getElementById('score-holder');
 const textContainer = document.getElementById('text-container');
 const finishText = document.getElementById('finish-text');
 
-//audio variable to reach from 2 functions
+//Audio to reach from 2 functions. Downloded from https://freesound.org/
 const welcomeAudioPath = 'assets/sounds/welcome-sound.mp3';
 const welcomeAudio = new Audio(welcomeAudioPath);
-
-// Event listeners to access globally from the function to play sounds
-startBtn.addEventListener('click', playBtnAudio);
-infoBtn.addEventListener('click', playBtnAudio);
-nextBtn.addEventListener('click', playBtnAudio);
-restartBtn.addEventListener('click', playBtnAudio);
-okBtn.addEventListener('click', playBtnAudio);
-soundBtn.addEventListener('click', playPauseAudio);
 
 //Array of answers box, to import answers according the question
 const options = Array.from(document.querySelectorAll('.answer'));
@@ -218,32 +241,18 @@ for (let option of options) {
 
 // Game functions
 
-/**
- * Play sound when a btn is clicked
- */
-function playBtnAudio(event) {
-    const btnAudioPath = 'assets/sounds/button-audio.mp3';
-    const btnAudio = new Audio(btnAudioPath);
-    const clickedButton = event.target;
-    if (!welcomeAudio.paused) {
-        btnAudio.play();
-    }
-
-    if (clickedButton === startBtn) {
-        checkUserInput();
-    } else if (clickedButton === infoBtn) {
-        showInfo();
-    } else if (clickedButton === nextBtn) {
-        checkHasAnswered();
-    } else if (clickedButton === restartBtn || clickedButton === okBtn) {
-        restartGame();
-    }
-}
+/*
+Most of the functions had been inspired from https://www.youtube.com/watch?v=riDzcEQbX6k and UDEMY course 
+JavaScript - The Complete Guide 2023 (Beginner + Advanced)
+Help how to add sounds is from https://www.youtube.com/watch?v=hn7MhPt24L4
+*/
 
 /**
  * Play or pause audio of the game
  */
 function playPauseAudio() {
+    // The audio is downloded from https://freesound.org/
+    const soundBtn = document.getElementById('sound-btn');
     if (welcomeAudio.paused) {
         welcomeAudio.play();
         soundBtn.innerHTML = `SOUND <i class="fa-solid fa-volume-high"></i>`;
@@ -254,13 +263,28 @@ function playPauseAudio() {
 }
 
 /**
+ * Play sound when a btn is clicked
+ */
+function playBtnAudio() {
+    // The audio is downloded from https://freesound.org/
+    const btnAudioPath = 'assets/sounds/button-audio.mp3';
+    const btnAudio = new Audio(btnAudioPath);
+    if (!welcomeAudio.paused) {
+        btnAudio.play();
+    }
+}
+
+/**
  * Play lost sound
  */
 function playLostSound() {
-    const lostAudioPath = 'assets/sounds/lost-audio.mp3';
+    // The audio is downloded from https://freesound.org/
+    const lostAudioPath = 'assets/sounds/lost-sound.mp3';
     const lostAudio = new Audio(lostAudioPath);
     if (!welcomeAudio.paused) {
         lostAudio.play();
+    } else {
+        lostAudio.pause();
     }
 }
 
@@ -268,10 +292,13 @@ function playLostSound() {
  * Play won sound
  */
 function playWonSound() {
+    // The audio is downloded from https://freesound.org/
     const wonAudioPath = 'assets/sounds/win-audio.mp3';
     const wonAudio = new Audio(wonAudioPath);
     if (!welcomeAudio.paused) {
         wonAudio.play();
+    } else {
+        lostAudio.pause();
     }
 }
 
@@ -306,7 +333,6 @@ function startGame() {
         option.style.backgroundColor = 'initial';   //reset the background color from green/red to the initial color         
     });
 
-    hasAnswered = false;
     welcomeContainer.classList.add('hide');
     document.getElementById('name-input').value = '';
     showNextQuestion();
