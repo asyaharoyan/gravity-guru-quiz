@@ -226,6 +226,8 @@ const options = Array.from(document.querySelectorAll('.answer'));
 //to always start from the first question
 let currentQuestionIndex = 0;
 let currentQuestion = {};
+// For checking if the user had answered the question and if it is right or wrong
+let hasAnswered = false;
 
 //Variables for the timer, can not be declared local
 let countdown;
@@ -382,7 +384,6 @@ function showNextQuestion() {
  * Check if the user did not answer a question, throw an alert
  */
 function checkHasAnswered() {
-    let hasAnswered;
     if (hasAnswered === false) {
         alert('Please answer the question!');
     } else {
