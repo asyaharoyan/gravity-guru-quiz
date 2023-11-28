@@ -413,6 +413,14 @@ function checkAnswer(event) {
 }
 
 /**
+ * Change the amount of the available questions
+ */
+function changeAvailableQuestionsAmount() {
+    let questionsAmount = parseInt(document.getElementById('questions-amount').innerText);
+    document.getElementById('questions-amount').innerText = --questionsAmount;
+}
+
+/**
  * Change the right answers' score
  */
 function changeRightAnswersScore() {
