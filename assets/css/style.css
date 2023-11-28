@@ -89,20 +89,31 @@
   #score-holder {
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 3rem;
+      padding: 1.2rem;
   }
 
   /* Style the incorrect score, correct score, the timer and the symbols */
-  #incorrect,
-  #incorrect-symbol,
-  #max-incorrect {
-      color: rgb(237, 52, 52);
+  #available-questions {
+      margin: 0 .1rem;
+      color: rgb(20, 35, 90);
       font-weight: 800;
   }
 
+  #incorrect-score {
+      display: flex;
+      width: 4rem;
+      height: 1.2rem;
+  }
+
+  .user-life {
+      width: .7rem;
+      height: 1.1rem;
+      background-color: rgb(207, 93, 93);
+      border-radius: 3px;
+  }
+
   #correct,
-  #correct-symbol,
-  #max-correct {
+  #correct-symbol {
       margin: 0 .1rem;
       color: rgb(213, 243, 233);
       font-weight: 800;
@@ -114,7 +125,7 @@
   }
 
   .time-counter-red {
-      color: rgb(237, 52, 52);
+      color: rgb(207, 93, 93);
       font-weight: 900;
       font-size: 1.5rem;
   }

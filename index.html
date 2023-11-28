@@ -37,22 +37,29 @@
     <section id="game-score">
       <h2 class="hide">Track the score and the timer of the quiz</h2>
       <div id="score-holder" class="hide">
+        <!-- Available questions -->
+        <div id="available-questions">
+          <span class="score" id="questions-symbol"
+            ><i class="fa-solid fa-clipboard-question"></i
+          ></span>
+          <span id="questions-amount" class="score">20</span>
+        </div>
+
         <!--Correct score -->
         <div id="correct-score">
           <span class="score" id="correct-symbol"
             ><i class="fa-solid fa-check-double"></i
           ></span>
-          <span id="correct" class="score">0</span
-          ><span id="max-correct" class="score">/20</span>
+          <span id="correct" class="score">0</span>
         </div>
 
         <!--Incorrect score -->
         <div id="incorrect-score">
-          <span class="score" id="incorrect-symbol"
-            ><i class="fa-solid fa-xmark"></i
-          ></span>
-          <span id="incorrect" class="score">0</span
-          ><span id="max-incorrect" class="score">/5</span>
+          <div class="user-life"></div>
+          <div class="user-life"></div>
+          <div class="user-life"></div>
+          <div class="user-life"></div>
+          <div class="user-life"></div>
         </div>
 
         <!--Timer -->

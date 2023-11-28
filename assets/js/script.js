@@ -176,35 +176,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const okBtn = document.getElementById('ok-btn');
 
     // Event listeners to access globally from the function to play sounds
-    startBtn.addEventListener('click', checkClickedButton);
-    infoBtn.addEventListener('click', checkClickedButton);
-    nextBtn.addEventListener('click', checkClickedButton);
-    restartBtn.addEventListener('click', checkClickedButton);
-    okBtn.addEventListener('click', checkClickedButton);
+    startBtn.addEventListener('click', clickedButtonHandler);
+    infoBtn.addEventListener('click', clickedButtonHandler);
+    nextBtn.addEventListener('click', clickedButtonHandler);
+    restartBtn.addEventListener('click', clickedButtonHandler);
+    okBtn.addEventListener('click', clickedButtonHandler);
     soundBtn.addEventListener('click', playPauseAudio);
 
     /**
      * Check which button had been clicked
      */
-    function checkClickedButton(event) {
+    function clickedButtonHandler(event) {
         const clickedButton = event.target;
 
         if (clickedButton === startBtn) {
-            playBtnAudio();
+            playButtonsSound();
             checkUserInput();
         } else if (clickedButton === infoBtn) {
-            playBtnAudio();
+            playButtonsSound();
             showInfo();
         } else if (clickedButton === nextBtn) {
-            playBtnAudio();
+            playButtonsSound();
             checkHasAnswered();
         } else if (clickedButton === restartBtn || clickedButton === okBtn) {
-            playBtnAudio();
+            playButtonsSound();
             restartGame();
         }
     }
 });
-
 
 // Global variables to access from more than 1 functions
 const welcomeContainer = document.getElementById('start');
@@ -231,7 +230,7 @@ let hasAnswered = false;
 
 //Variables for the timer, can not be declared local
 let countdown;
-const countDown = document.getElementById('timer');
+const timer = document.getElementById('timer');
 
 /**
  * Add event listener to all answer-boxes to check the answer and change the background color
@@ -263,15 +262,17 @@ function playPauseAudio() {
     }
 }
 
+// The audios is downloded from https://freesound.org/
 /**
  * Play sound when a btn is clicked
  */
-function playBtnAudio() {
-    // The audio is downloded from https://freesound.org/
+function playButtonsSound() {
     const btnAudioPath = 'assets/sounds/button-audio.mp3';
     const btnAudio = new Audio(btnAudioPath);
     if (!welcomeAudio.paused) {
         btnAudio.play();
+    } else {
+        btnAudio.pause();
     }
 }
 
@@ -279,7 +280,6 @@ function playBtnAudio() {
  * Play lost sound
  */
 function playLostSound() {
-    // The audio is downloded from https://freesound.org/
     const lostAudioPath = 'assets/sounds/lost-sound.mp3';
     const lostAudio = new Audio(lostAudioPath);
     if (!welcomeAudio.paused) {
@@ -293,7 +293,6 @@ function playLostSound() {
  * Play won sound
  */
 function playWonSound() {
-    // The audio is downloded from https://freesound.org/
     const wonAudioPath = 'assets/sounds/win-audio.mp3';
     const wonAudio = new Audio(wonAudioPath);
     if (!welcomeAudio.paused) {
@@ -355,7 +354,6 @@ function showNextQuestion() {
         scoreRow.classList.remove('hide');
         // to make space between the numbers
         scoreRow.style.display = ('flex');
-        timerOn(30);
         currentQuestion = availableQuestions[currentQuestionIndex];
         // Add current question in the question holder
         questionHolder.innerText = currentQuestion.question;
@@ -366,6 +364,7 @@ function showNextQuestion() {
             // Reset the background color from green/red to the initial color
             option.style.backgroundColor = 'initial';
         });
+        timerOn(30);
         currentQuestionIndex++;
     } else {
         // When the user answers all 20 questions, the game finishes
@@ -440,7 +439,7 @@ function changeWrongAnswersScore() {
 function gameOver() {
     playLostSound();
     // Reset all the color changes and hide/show containers accordingly
-    countDown.classList.remove('time-counter-red');
+    timer.classList.remove('time-counter-red');
     timerSymbol.classList.remove('time-counter-red');
     textContainer.classList.add('visible');
     finishedGame.classList.remove('hide');
@@ -484,7 +483,7 @@ function restartGame() {
  */
 function timerOn(seconds) {
     countdown = setInterval(() => {
-        countDown.innerHTML = `${seconds}`;
+        timer.innerHTML = `${seconds}`;
         seconds--;
 
         if (seconds < 0) {
@@ -495,7 +494,7 @@ function timerOn(seconds) {
             return;
         } else if (seconds === 4) {
             //Change the color of the timer to warn the user that the time is finishing
-            countDown.classList.add('time-counter-red');
+            timer.classList.add('time-counter-red');
             timerSymbol.classList.add('time-counter-red');
         }
     }, 1000);
