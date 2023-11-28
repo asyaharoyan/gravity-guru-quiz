@@ -401,12 +401,20 @@ function checkAnswer(event) {
     }
     //Added event to chen the answer on click event and change the background color
     const clickedAnswer = parseInt(event.target.dataset.number, 10);
+
     if (clickedAnswer === currentQuestion.answer) {
         event.target.style.backgroundColor = 'rgba(38, 212, 154, .7)';
         changeRightAnswersScore();
+        changeAvailableQuestionsAmount();
     } else {
         event.target.style.backgroundColor = 'rgba(237, 52, 52, .7)';
-        changeWrongAnswersScore();
+        // To return the function as a boolean to check if there are more divs to hide
+        const noMoreLife = changeWrongAnswersScore();
+        if (noMoreLife) {
+            // Finish the game logic if all the divs are away
+            gameOver();
+        }
+        changeAvailableQuestionsAmount();
     }
     hasAnswered = true;
     clearInterval(countdown);
@@ -432,13 +440,16 @@ function changeRightAnswersScore() {
  * Change the wrong answers score
  */
 function changeWrongAnswersScore() {
-    let incorrectScore = parseInt(document.getElementById('incorrect').innerText);
-    document.getElementById('incorrect').innerText = ++incorrectScore;
-
-    if (incorrectScore === 5) {
-        gameOver();
-        return;
+    const userLives = document.querySelectorAll('.user-life');
+    for (const userLife of userLives) {
+        if (!userLife.classList.contains('hide')) {
+            userLife.classList.add('hide');
+            break;  // Stop after hiding the first visible wrong answer and continue the game
+        }
     }
+    // Check if there are still visible wrong answers
+    const remaininguserLives = document.querySelectorAll('.user-life:not(.hide)');
+    return remaininguserLives.length === 0;
 }
 
 /**
@@ -473,8 +484,13 @@ function restartGame() {
     currentQuestionIndex = 0;
 
     // Reset all the scores if the user starts over
-    document.getElementById('incorrect').innerText = '0';
+    document.getElementById('questions-amount').innerText = '20';
     document.getElementById('correct').innerText = '0';
+    const userLives = document.querySelectorAll('.user-life');
+    //Remove hide class to restart the game and show all the divs
+    for (const userLife of userLives) {
+        userLife.classList.remove('hide');
+    }
     // Add new options with every question
     options.forEach(option => {
         const number = option.dataset['number'];
