@@ -102,12 +102,15 @@
   #incorrect-score {
       display: flex;
       width: 4rem;
-      height: 1.2rem;
+      height: 1rem;
+      border: 1px solid rgb(207, 93, 93);
+      border-radius: 3px;
+      align-items: center;
   }
 
   .user-life {
-      width: .7rem;
-      height: 1.1rem;
+      width: .8rem;
+      height: 1rem;
       background-color: rgb(207, 93, 93);
       border-radius: 3px;
   }
@@ -319,12 +322,12 @@
       }
 
       #incorrect-score {
-          width: 5rem;
+          width: 5.5rem;
           height: 2rem;
       }
 
       .user-life {
-          width: 1rem;
+          width: 1.1rem;
           height: 2rem;
           border-radius: 6px;
       }
