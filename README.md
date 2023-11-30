@@ -91,6 +91,12 @@ The JavaScript had been validated at [JShint](https://jshint.com/).
 No errors had been found.
 ![Validated JS](media/validated-js.png)
 
+### Further testing
+
+The page was tested on Google Chrome, Mozilla, Microsoft Edge browsers. Because Mozilla could not load .vaw files for sounds, all the sounds has been canged to mp3, as all the browsers could load it.
+
+The page has been viewed on different devices, such as different mobile phones, on a laptop and 23" screen. It is responsive on all the screens.
+
 ## Unfixed bugs
 
 Imported fonts appear to have a problem.
