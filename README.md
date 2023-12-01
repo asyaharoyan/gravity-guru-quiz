@@ -96,6 +96,13 @@ The JavaScript had been validated at [JShint](https://jshint.com/).
 No errors had been found.
 ![Validated JS](media/validated-js.png)
 
+### Lighthouse testing
+
+The lighthouse tests were successfull for both mobile phones and desktops
+
+![Lighthouse mobile](media/lighthouse-mobile.png)
+![Lighthouse desktop](media/lighthouse-desctop.png)
+
 ### Further testing
 
 The page was tested on Google Chrome, Mozilla and Microsoft Edge browsers. Because Mozilla could not load .vaw files for sounds, all the sounds have been changed to mp3, as all the browsers could load them.
