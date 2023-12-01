@@ -25,7 +25,7 @@ const questions = [
         answer: 1
     },
     {
-        question: "A ball is thrown horizontally from the top of a cliff with an initial velocity of 10 m/s. If the cliff is 50 meters high, how long will it take for the ball to hit the ground?",
+        question: "A ball is thrown horizontally from the top of a cliff with an initial velocity of 10 m/s. If the cliff is 20 meters high, how long will it take for the ball to hit the ground?",
         option1: "1.4 s",
         option2: "2.0 s",
         option3: "5.0 s",
@@ -61,7 +61,7 @@ const questions = [
         option1: "20 N",
         option2: "35 N",
         option3: "45 N",
-        option4: "50 N",
+        option4: "65 N",
         answer: 4
     },
     {
@@ -113,8 +113,8 @@ const questions = [
         answer: 3
     },
     {
-        question: "A ray of light travels from air to glass at an angle of incidence of 30 degrees. If the refractive index of glass is 1.5, what is the angle of refraction?",
-        option1: "19.5 degrees",
+        question: "A ray of light travels from air to glass at an angle of incidence of 45 degrees. If the refractive index of glass is 1.4, what is the angle of refraction?",
+        option1: "30 degrees",
         option2: "30 degrees",
         option3: "45 degrees",
         option4: "48 degrees",
@@ -166,7 +166,6 @@ const questions = [
 document.addEventListener('DOMContentLoaded', function () {
     const nameInput = document.getElementById('name-input');
     nameInput.focus();
-
 
     // Variables for buttons to add event listeners
     const nextBtn = document.getElementById('next-btn');
