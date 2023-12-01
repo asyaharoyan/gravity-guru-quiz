@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const nameInput = document.getElementById('name-input');
     nameInput.focus();
 
+
     // Variables for buttons to add event listeners
     const nextBtn = document.getElementById('next-btn');
     const startBtn = document.getElementById('start-btn');
@@ -398,7 +399,7 @@ function checkAnswer(event) {
     if (hasAnswered || !currentQuestion || hasAnswered === true) {
         return; // Exit the function if the user has already answered
     }
-    //Added event to chen the answer on click event and change the background color
+    //Added event to the answer on click event and change the background color
     const clickedAnswer = parseInt(event.target.dataset.number, 10);
 
     if (clickedAnswer === currentQuestion.answer) {
