@@ -1,6 +1,7 @@
 # Gravity Guru Quiz
 
-The quiz has been made for school students to boost their knowledge of physics. The quiz contains 20 questions and 5 chances to fail. The purpose is to be used in the schools or be given as a homework to make the study more fun. The game has an option to have a sound on for those who would like it. It is fully responsive for the most common screen sizes.
+The quiz has been made for school students to boost their knowledge of physics. The quiz contains 20 questions and 5 chances to fail. The purpose is to be used in the schools or be given as a homework to make the study more fun. The questions are on the same order as the idea is to have the easy ones in the beginning and the complicated ones in the end.
+The game has an option to have a sound on for those who would like it. It is fully responsive for the most common screen sizes.
 
 ![Screenshot of the page](media/responsive.png)
 
@@ -77,11 +78,15 @@ The user always has a chance to restar the game regardless if they won or lost. 
 
 ### Validator testing
 
-The HTML had been validated at [validator.w3.org](https://validator.w3.org/nu/#textarea).
+The HTML had been validated at [validator.w3.org](https://validator.w3.org/nu/#textarea) and [wave.webaim.org](https://wave.webaim.org/).
 Found errors in button types.
 ![Errors in HTML](media/validating-html.png)
 All of them had been fixed.
 ![Validated HTML](media/validated-html.png)
+
+In Wave.webaim validator it warns that the webpage does not include heading, footer or nav bar.
+![Warnings](media/validating.png)
+The regions had not been added, because the quiz does not need to have them to function and give clear signs to the user.
 
 The CSS had been validated at [jigsaw.w3.org](https://jigsaw.w3.org/css-validator/validator.html.en)
 No errors had been found.

@@ -228,7 +228,7 @@ let currentQuestion = {};
 // For checking if the user had answered the question and if it is right or wrong
 let hasAnswered = false;
 
-//Variables for the timer, can not be declared local
+//Variables for the timer to access from more than one funktions
 let countdown;
 const timer = document.getElementById('timer');
 
@@ -247,11 +247,11 @@ JavaScript - The Complete Guide 2023 (Beginner + Advanced)
 Help how to add sounds is from https://www.youtube.com/watch?v=hn7MhPt24L4
 */
 
+// The audios is downloded from https://freesound.org/
 /**
  * Play or pause audio of the game
  */
 function playPauseAudio() {
-    // The audio is downloded from https://freesound.org/
     const soundBtn = document.getElementById('sound-btn');
     if (welcomeAudio.paused) {
         welcomeAudio.play();
@@ -262,7 +262,6 @@ function playPauseAudio() {
     }
 }
 
-// The audios is downloded from https://freesound.org/
 /**
  * Play sound when a btn is clicked
  */
@@ -303,7 +302,7 @@ function playWonSound() {
 }
 
 /**
- * Checking if the input is empty, does not start the game.
+ * Checking if the input is empty, to throw an alert
  */
 function checkUserInput() {
     const nameInput = document.getElementById('name-input');
@@ -335,13 +334,13 @@ function startGame() {
 
     welcomeContainer.classList.add('hide');
     document.getElementById('name-input').value = '';
-    showNextQuestion();
+    showQuestion();
 }
 
 /**
  * To continue with the next questions as the user clicks next
  */
-function showNextQuestion() {
+function showQuestion() {
     //to be able to change the array separatly
     let availableQuestions = [...questions];
     const questionHolder = document.getElementById('question-holder');
@@ -386,7 +385,7 @@ function checkHasAnswered() {
     if (hasAnswered === false) {
         alert('Please answer the question!');
     } else {
-        showNextQuestion();
+        showQuestion();
     }
 }
 
