@@ -3,14 +3,14 @@
   font-family: 'Noto Serif', serif;
   font-family: 'Poppins', sans-serif;*/
 
-  /* Boiler plate */
+  /* Asterisc wildcard to override defult styles added by browser */
   * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
   }
 
-  /* General design to apply to the quiz*/
+  /* General design to apply to the quiz */
   body {
       /*The image had been taken https: //pixabay.com/photos/cosmos-milky-way-night-sky-stars-1853491/*/
       background: url(../images/background.webp) left 30% bottom 50%/180%;
@@ -26,26 +26,36 @@
   }
 
   /* Header */
-  #header-container {
+  header {
       position: fixed;
-      height: 2rem;
+      height: 3rem;
       width: 100%;
       top: 0;
-      background-color: rgba(218, 228, 232, 0.9);
+      z-index: 99;
+      background-color: rgba(218, 228, 232, 0.98);
+      animation: slide-in .5s ease-out forwards;
   }
 
-  #header-container h1 {
-      font-size: .65rem;
-      font-weight: 700;
-      margin: .5rem;
+  #header-container {
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #header-container a {
+      font-size: 1rem;
+      font-weight: 900;
+      text-decoration: none;
       color: rgb(20, 35, 90);
+      animation: slide-in .5s ease-out forwards;
   }
 
-  /* Added general style and animation for starting the game and the score */
+  /* General style and animation for the welcome page and the score */
   #start,
   #score-holder {
       background-color: rgba(218, 228, 232, 0.6);
-      margin: 1rem;
+      margin: 4rem 1rem 1rem 1rem;
       padding: 1rem;
       border-radius: 2rem;
       animation: slide-in .5s ease-out forwards;
@@ -55,7 +65,7 @@
   #start>h1 {
       font-size: 2rem;
       text-align: center;
-      margin: 3rem .5rem 4rem .5rem;
+      margin: 2rem .5rem 4rem .5rem;
       color: rgb(255, 255, 255);
   }
 
@@ -97,7 +107,7 @@
       margin: .8rem auto 1rem auto;
   }
 
-  /* Make som space between the icon and the text */
+  /* Make some space between the icon and the text */
   .btn i {
       margin-left: .5rem;
   }
@@ -160,7 +170,7 @@
 
   #questions {
       background-color: rgba(218, 228, 232, 0.6);
-      margin: 1rem;
+      margin: 1rem 1rem 4rem 1rem;
       padding: 1rem;
       border-radius: 2rem;
   }
@@ -274,7 +284,8 @@
       height: 1.5rem;
       width: 100%;
       bottom: 0;
-      background-color: rgba(218, 228, 232, 0.9);
+      background-color: rgba(218, 228, 232, 0.98);
+      animation: slide-in .5s ease-out forwards;
   }
 
   #copyright {
@@ -295,9 +306,23 @@
   /* Media query: Tablets and larger (768px and bigger)*/
   @media screen and (min-width: 768px) {
 
+      /* Header */
+      header {
+          height: 5rem;
+      }
+
+      #header-container {
+          height: 5rem;
+      }
+
+      #header-container a {
+          font-size: 2rem;
+          font-weight: 900;
+      }
+
       /* Restyling the start of the game for bigger screens */
       #start {
-          margin: 8rem 3rem auto 3rem;
+          margin: 10rem 3rem auto 3rem;
           padding: 2rem;
       }
 
@@ -356,7 +381,7 @@
 
       /* Push the score holder down and add more margin on the sides */
       #score-holder {
-          margin: 8% 15%;
+          margin: 9rem 15% 2rem 15%;
           min-height: 6rem;
           font-size: 2rem;
           padding: 1rem 3rem;
@@ -375,7 +400,7 @@
 
       /* Push the question container down */
       #questions {
-          margin: 8%;
+          margin: 6% 8% 7rem 8%;
           padding: 3rem;
       }
 
@@ -424,14 +449,13 @@
 
       /* Adjust the start page for laptops */
       #start {
-          margin: 4% 10rem auto 10rem;
+          margin: 10rem 10rem auto 10rem;
           padding: 3rem;
       }
 
       #name-input {
           width: 70%;
           margin: .1rem 15%;
-
       }
 
       /* Make the buttons smaller */
@@ -462,7 +486,7 @@
 
       /* Adjust the scores and the questions to look nice on the laptops and bigger screens */
       #score-holder {
-          margin: 2% 25%;
+          margin: 9rem 25% 5rem 25%;
           font-size: 2rem;
           padding: 1rem 5rem;
       }
@@ -479,7 +503,7 @@
       }
 
       #questions {
-          margin: 3% 13%;
+          margin: 3% 13% 9rem 13%;
           padding: 3rem;
       }
 
