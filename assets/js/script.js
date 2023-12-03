@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const soundBtn = document.getElementById('sound-btn');
     const okBtn = document.getElementById('ok-btn');
 
-    // Event listeners to access globally from the function to play sounds
+    // Event listeners to access from the functions to play sounds
     startBtn.addEventListener('click', clickedButtonHandler);
     infoBtn.addEventListener('click', clickedButtonHandler);
     nextBtn.addEventListener('click', clickedButtonHandler);
@@ -222,7 +222,7 @@ const welcomeAudio = new Audio(welcomeAudioPath);
 //Array of answers box, to import answers according the question
 const options = Array.from(document.querySelectorAll('.answer'));
 
-//to always start from the first question
+//Always start from the first question
 let currentQuestionIndex = 0;
 let currentQuestion = {};
 // For checking if the user had answered the question and if it is right or wrong
@@ -341,7 +341,7 @@ function startGame() {
  * To continue with the next questions as the user clicks next
  */
 function showQuestion() {
-    //to be able to change the array separatly
+    // Copy the questions array to be able to change the array separatly
     let availableQuestions = [...questions];
     const questionHolder = document.getElementById('question-holder');
     // Animate the question every time it loads
@@ -410,7 +410,7 @@ function checkAnswer(event) {
         // To return the function as a boolean to check if there are more divs to hide
         const noMoreLife = changeWrongAnswersScore();
         if (noMoreLife) {
-            // Finish the game logic if all the divs are away
+            // Finish the game logic if all the user lives are away
             gameOver();
         }
         changeAvailableQuestionsAmount();
@@ -420,7 +420,7 @@ function checkAnswer(event) {
 }
 
 /**
- * Change the amount of the available questions
+ * Decrease the amount of the questions every time the user answers a question
  */
 function changeAvailableQuestionsAmount() {
     let questionsAmount = parseInt(document.getElementById('questions-amount').innerText);
@@ -428,7 +428,7 @@ function changeAvailableQuestionsAmount() {
 }
 
 /**
- * Change the right answers' score
+ * Change the right answers score
  */
 function changeRightAnswersScore() {
     let correctScore = parseInt(document.getElementById('correct').innerText);
@@ -443,10 +443,10 @@ function changeWrongAnswersScore() {
     for (const userLife of userLives) {
         if (!userLife.classList.contains('hide')) {
             userLife.classList.add('hide');
-            break;  // Stop after hiding the first visible wrong answer and continue the game
+            break;  // Stop after hiding the first user life box and continue the game
         }
     }
-    // Check if there are still visible wrong answers
+    // Check if there are still visible user life boxes
     const remaininguserLives = document.querySelectorAll('.user-life:not(.hide)');
     return remaininguserLives.length === 0;
 }

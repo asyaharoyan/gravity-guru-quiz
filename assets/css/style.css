@@ -248,7 +248,6 @@
   /* Animate all the NEXT QUESTIONS */
   .next-question {
       animation: slide-right 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-      /* pointer-events: all; --- what is this*/
   }
 
   /* The 404 error page */
@@ -413,7 +412,6 @@
       /* Make the timer's font (when 5 sec. left) bigger for tablets */
       .time-counter-red {
           font-weight: 1000;
-          /* Was 1200, changed */
           font-size: 3rem;
       }
 
