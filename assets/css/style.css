@@ -127,19 +127,18 @@
 
   #incorrect-score {
       display: flex;
+      flex-grow: 0;
       width: 4rem;
       height: 1rem;
       border: 1px solid rgb(207, 93, 93);
-      border-radius: 3px;
       align-items: center;
   }
 
   .user-life {
-      width: .8rem;
+      width: 11.4px;
       height: 1rem;
-      margin: 2px;
+      margin: .5px;
       background-color: rgb(207, 93, 93);
-      border-radius: 3px;
   }
 
   #correct,
@@ -393,9 +392,8 @@
       }
 
       .user-life {
-          width: 1.1rem;
+          width: 16.2px;
           height: 2rem;
-          border-radius: 6px;
       }
 
       /* Push the question container down */
@@ -497,9 +495,8 @@
       }
 
       .user-life {
-          width: 1.6rem;
+          width: 24.2px;
           height: 2rem;
-          border-radius: 6px;
       }
 
       #questions {

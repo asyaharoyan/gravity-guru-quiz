@@ -86,7 +86,7 @@ All of them had been fixed.
 
 In Wave.webaim validator it warns that the webpage does not include heading, footer or nav bar.
 ![Warnings](media/validating.png)
-The regions had not been added, because the quiz does not need to have them to function and give clear signs to the user.
+The regions had been added to the game.
 
 The CSS had been validated at [jigsaw.w3.org](https://jigsaw.w3.org/css-validator/validator.html.en)
 No errors had been found.
