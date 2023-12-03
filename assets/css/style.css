@@ -25,6 +25,22 @@
       display: none;
   }
 
+  /* Header */
+  #header-container {
+      position: fixed;
+      height: 2rem;
+      width: 100%;
+      top: 0;
+      background-color: rgba(218, 228, 232, 0.9);
+  }
+
+  #header-container h1 {
+      font-size: .65rem;
+      font-weight: 700;
+      margin: .5rem;
+      color: rgb(20, 35, 90);
+  }
+
   /* Added general style and animation for starting the game and the score */
   #start,
   #score-holder {
@@ -111,6 +127,7 @@
   .user-life {
       width: .8rem;
       height: 1rem;
+      margin: 2px;
       background-color: rgb(207, 93, 93);
       border-radius: 3px;
   }
@@ -225,7 +242,7 @@
       /* pointer-events: all; --- what is this*/
   }
 
-  /* The error page */
+  /* The 404 error page */
   #error-page {
       background-color: rgba(218, 228, 232, 0.9);
       padding: 2rem;
@@ -251,12 +268,36 @@
       font-style: oblique;
   }
 
+  /*Footer*/
+  footer {
+      position: fixed;
+      height: 1.5rem;
+      width: 100%;
+      bottom: 0;
+      background-color: rgba(218, 228, 232, 0.9);
+  }
+
+  #copyright {
+      display: flex;
+      justify-content: center;
+      height: 1.5rem;
+      align-items: center;
+
+  }
+
+  #copyright p {
+      font-size: .65rem;
+      font-weight: 500;
+      margin: .5rem;
+      color: rgb(20, 35, 90);
+  }
+
   /* Media query: Tablets and larger (768px and bigger)*/
   @media screen and (min-width: 768px) {
 
       /* Restyling the start of the game for bigger screens */
       #start {
-          margin: 30% 3rem auto 3rem;
+          margin: 8rem 3rem auto 3rem;
           padding: 2rem;
       }
 
@@ -359,7 +400,24 @@
           margin: 30% 10%;
           padding: 1.8rem;
       }
+
+      /*Footer*/
+      footer {
+          height: 4rem;
+      }
+
+      #copyright {
+          height: 4rem;
+          align-items: center;
+      }
+
+      #copyright p {
+          font-size: 1rem;
+          font-weight: 700;
+          margin: 1rem;
+      }
   }
+
 
   /* Media query: Tablets and larger (992px and bigger)*/
   @media screen and (min-width: 992px) {
