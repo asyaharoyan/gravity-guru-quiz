@@ -18,6 +18,11 @@ The users should have the chance to restart the game regardless if they lost it 
 
 ## Existing Features
 
+- The header
+  - The header includes the name and the logo of the page. It is an anchor linked to the index.html.
+
+![The header](media/header.png)
+
 - The welcome page
   - On the welcome page the user has the chance to input the name and start the game
   - The user has a clear button for reading the instructions
@@ -53,6 +58,11 @@ The users should have the chance to restart the game regardless if they lost it 
   - When the game finishes the user sees a text which eighter informs the user that they lost the game or completed it. The use always has a choice to restart the game.
 
 ![The finish game section](media/game-over-section.png)
+
+- The footer
+  - The footer includes the designer name and the name of the game.
+
+![Footer](media/footer.png)
 
 ## Design
 
