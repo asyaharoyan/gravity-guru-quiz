@@ -115,7 +115,7 @@ const questions = [
     {
         question: "A ray of light travels from air to glass at an angle of incidence of 45 degrees. If the refractive index of glass is 1.4, what is the angle of refraction?",
         option1: "30 degrees",
-        option2: "30 degrees",
+        option2: "20 degrees",
         option3: "45 degrees",
         option4: "48 degrees",
         answer: 1
