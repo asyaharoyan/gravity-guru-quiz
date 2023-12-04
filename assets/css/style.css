@@ -482,7 +482,7 @@
 
       /* Adjust the scores and the questions to look nice on the laptops and bigger screens */
       #score-holder {
-          margin: 9rem 25% 5rem 25%;
+          margin: 9rem 25% 3rem 25%;
           font-size: 2rem;
           padding: 1rem 5rem;
       }
