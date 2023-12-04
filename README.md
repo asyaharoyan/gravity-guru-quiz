@@ -3,7 +3,7 @@
 The quiz has been made for school students to boost their knowledge of physics. The quiz contains 20 questions and 5 chances to fail. The purpose is to be used in the schools or be given as homework to make the study more fun. The questions are in the same order as the idea is to have the easy ones in the beginning and the complicated ones in the end.
 The game has an option to have a sound on for those who would like it. It is fully responsive for the most common screen sizes.
 
-![Screenshot of the page](media/responsive.png)
+![Screenshot of the page](media/responsive-quiz.png)
 
 ## User Experience / UX
 
